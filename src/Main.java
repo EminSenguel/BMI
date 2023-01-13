@@ -9,7 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
         Daten();
-        //outcome()
+        double a = BMIRechner();
+
+        outcome(a);
 
 
 
@@ -25,14 +27,14 @@ public class Main {
         System.out.println("OK! You are " + alter+ " years old. Please enter your size in cm:");
 
         groeße = myScanner.nextInt();
-        System.out.println("OK! You are " + alter+ " years old. Please enter your weight in kg:");
+        System.out.println("OK! You are " + alter+ " years old. And "+ groeße+ " big. Please enter your weight in kg:");
 
         gewicht = myScanner.nextDouble();
 
         System.out.println("Very nice! You are " + alter + " years old, " + groeße + "cm big and you weight is "+ gewicht+ " kg");
 
     }
-    public double BMIRechner(int groeße, int gewicht){
+    public static double BMIRechner(){
         double BMI = gewicht / (groeße * groeße);
         System.out.println("The Body Mass Index (BMI) is " + BMI + " kg/m2");
         return BMI;
@@ -40,7 +42,7 @@ public class Main {
 
     }
 
-    public String outcome(int input)
+    public static String outcome(double input)
     {
         String output = null;
 
