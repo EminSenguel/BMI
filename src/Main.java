@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -8,12 +7,14 @@ public class Main {
     static double gewicht;
     static char infotxt;
 
+    static double BMI;
+
 
     public static void main(String[] args) {
         Daten();
-        double a = BMIRechner();
+        BMIRechner();
 
-        outcome(a);
+        outcome();
 
 
 
@@ -36,25 +37,25 @@ public class Main {
         System.out.println("Very nice! You are " + alter + " years old, " + groeße + "cm big and you weight is "+ gewicht+ " kg");
 
     }
-    public static double BMIRechner(){
-        double BMI = gewicht / (groeße * groeße);
+    public static void BMIRechner(){
+        double g = groeße / 100.0;
+        BMI = gewicht / (Math.pow(g,2));
         System.out.println("The Body Mass Index (BMI) is " + BMI + " kg/m2");
-        return BMI;
-
 
     }
 
-    public static String outcome(double input)
+
+    public static String outcome()
     { Scanner myScanner = new Scanner(System.in);
         String output = null;
 
-        if
-        (input >= 25) {
+        if (BMI >= 25) {
             output = "Astronomer Adolphe Quetelet says overweight";
             System.out.println(output);
             System.out.println("Want to know more?");
             infotxt = myScanner.next().charAt(0);
 
+        } else if (BMI >= 18.5) {
             if (infotxt == 'y')
                 System.out.println("Thick is not the same as fat! Your calculated BMI does not correspond to the norm, but still says nothing about how healthy or fit you are. According to the WHO, there are different types of chubbynes. From a certain degree we recommend to clarify how your weight affects your body. Your self-confidence can also depend on it. If you want to change something, talk to your doctor and/or a nutritionist. Don't overtax your body and take small steps little by little. Patience is a virtue, when changing your lifestyle you can (inevitably) acquire it.  ");
                 else {
@@ -62,8 +63,9 @@ public class Main {
                 }
             }
 
-            else if (input >= 18.5) {
+            else if (BMI >= 18.5) {
             output = "Astronomer Adolphe Quetelet says standardweight";
+        } else if (BMI >= 15) {
             System.out.println(output);
             System.out.println("Want to know more?");
             infotxt = myScanner.next().charAt(0);
@@ -73,8 +75,9 @@ public class Main {
                 System.out.println("OK! Live long and in peace");
                 }
 
-            } else if (input >= 15) {
+            } else if (BMI >= 15) {
             output = "Astronomer Adolphe Quetelet says underweight";
+        } else if (BMI < 15){
             System.out.println(output);
             System.out.println("Want to know more?");
             infotxt = myScanner.next().charAt(0);
@@ -83,17 +86,16 @@ public class Main {
                 else {
                         System.out.println("OK! Live long and in peace");
                     }
-        } else if (input < 15){
+        } else if (BMI < 15){
             output="You need to see a doctor  NOW!";
             System.out.println(output);
             System.out.println("Do you want more information?");
             infotxt = myScanner.next().charAt(0);
-                    if (infotxt == 'y')
-                        System.out.println("See a doctor NOW!");
-                else {
-                            System.out.println("OK! Hope you're doing good");
-                        }
+            if (infotxt == 'y')
+                System.out.println("See a doctor NOW!");
+            else {
+                System.out.println("OK! Hope you're doing good");
+            }
         }
-        return output;
-    }
+
 }
