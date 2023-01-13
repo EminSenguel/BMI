@@ -29,6 +29,13 @@ public class Main {
         System.out.println("Sehr gut! Du bist also " + alter + " Jahre alt, " + groeße + "cm groß und wiegst "+ gewicht+ " Kg");
 
     }
+    public double BMIRechner(int groeße, int gewicht){
+        double BMI = gewicht / (groeße * groeße);
+        System.out.println("The Body Mass Index (BMI) is " + BMI + " kg/m2");
+        return BMI;
+
+
+    }
 
     public String outcome(int input)
     {
