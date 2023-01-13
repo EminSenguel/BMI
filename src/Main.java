@@ -11,22 +11,25 @@ public class Main {
         Daten();
         //outcome()
 
+
+
+
     }
 
     public static void Daten()
     {
 
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Alter eingeben:");
+        System.out.println("Our Age:");
         alter = myScanner.nextInt();
-        System.out.println("OK! Du bist also " + alter+ " Jahre alt. Gib bitte deine Größe ein in cm:");
+        System.out.println("OK! You are " + alter+ " years old. Please enter your size in cm:");
 
         groeße = myScanner.nextInt();
-        System.out.println("OK! Du bist also " + alter+ " Jahre alt. Gib jetzt bitte dein Gewicht in Kg:");
+        System.out.println("OK! You are " + alter+ " years old. Please enter your weight in kg:");
 
         gewicht = myScanner.nextDouble();
 
-        System.out.println("Sehr gut! Du bist also " + alter + " Jahre alt, " + groeße + "cm groß und wiegst "+ gewicht+ " Kg");
+        System.out.println("Very nice! You are " + alter + " years old, " + groeße + "cm big and you weight is "+ gewicht+ " kg");
 
     }
 
