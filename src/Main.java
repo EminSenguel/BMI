@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -22,7 +23,7 @@ public class Main {
     {
 
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Our Age:");
+        System.out.println("Your Age:");
         alter = myScanner.nextInt();
         System.out.println("OK! You are " + alter+ " years old. Please enter your size in cm:");
 
@@ -49,13 +50,16 @@ public class Main {
         if
         (input >= 25) {
             output = "Astronomer Adolphe Quetelet says overweight";
-
+            System.out.println(output);
         } else if (input >= 18.5) {
             output = "Astronomer Adolphe Quetelet says standardweight";
+            System.out.println(output);
         } else if (input >= 15) {
             output = "Astronomer Adolphe Quetelet says underweight";
+            System.out.println(output);
         } else if (input < 15){
             output="You need to see a doctor  NOW!";
+            System.out.println(output);
         }
         return output;
     }
