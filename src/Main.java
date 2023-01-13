@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         Daten();
+        //outcome()
 
     }
 
@@ -27,5 +28,23 @@ public class Main {
 
         System.out.println("Sehr gut! Du bist also " + alter + " Jahre alt, " + groeße + "cm groß und wiegst "+ gewicht+ " Kg");
 
+    }
+
+    public String outcome(int input)
+    {
+        String output = null;
+
+        if
+        (input >= 25) {
+            output = "Astronomer Adolphe Quetelet says overweight";
+
+        } else if (input >= 18.5) {
+            output = "Astronomer Adolphe Quetelet says standardweight";
+        } else if (input >= 15) {
+            output = "Astronomer Adolphe Quetelet says underweight";
+        } else if (input < 15){
+            output="You need to see a doctor  NOW!";
+        }
+        return output;
     }
 }
